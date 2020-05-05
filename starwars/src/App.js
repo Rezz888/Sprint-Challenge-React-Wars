@@ -2,6 +2,10 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import axios from "axios";
 import Character from "./components/Character"
+import {
+  Navbar,
+  NavbarBrand
+} from "reactstrap";
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -31,6 +35,7 @@ useEffect( () =>{
 
   return (
     <div className="App">
+      <Navbar fixed="top" className="Header navbar"><NavbarBrand>Rick and Morty</NavbarBrand></Navbar>
       <h1 className="Header">Characters</h1>
       {data.map((charItem)=>{
          return (

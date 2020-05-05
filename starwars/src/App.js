@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import axios from "axios";
+import Character from "./components/Character"
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -31,6 +32,18 @@ useEffect( () =>{
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
+      {data.map((charItem)=>{
+         return (
+          <Character 
+          image={charItem.image}
+          name={charItem.name}
+          status={charItem.status}
+          species={charItem.species}
+          gender={charItem.gender}
+          />
+         )
+      })}
+
     </div>
   );
 }
